@@ -7,7 +7,7 @@
 To use `typed`, you need to have Go installed and set up on your machine. Then you can install the package using `go get`:
 
 ```sh
-go get "github.com/tclaudel/typed"
+go get "github.com/tclaudel/typed-go"
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ go get "github.com/tclaudel/typed"
 Import the package into your Go code:
 
 ```go
-import "github.com/tclaudel/typed"
+import "github.com/tclaudel/typed-go"
 ```
 
 Here's a basic example demonstrating how to use `typed.SyncMap`:
@@ -25,7 +25,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/tclaudel/typed"
+	"github.com/tclaudel/typed-go"
 )
 
 func main() {

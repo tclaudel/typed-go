@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"typed"
+	"github.com/tclaudel/typed-go"
 )
 
 func TestNewSyncMap(t *testing.T) {

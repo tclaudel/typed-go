@@ -1,4 +1,4 @@
-module typed
+module github.com/tclaudel/typed-go
 
 go 1.22.0
 
