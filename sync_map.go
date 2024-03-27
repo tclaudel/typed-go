@@ -27,12 +27,14 @@ func (m *SyncMap[T]) Delete(key string) {
 
 // Load returns the value for the key from the map.
 func (m *SyncMap[T]) Load(key string) (T, bool) {
+	var res T
+
 	v, ok := m.innerMap.Load(key)
 	if !ok {
-		return v.(T), false
+		return res, false
 	}
 
-	return v.(T), true
+	return v.(T), ok
 }
 
 // LoadAndDelete loads the value for the key and deletes the key from the map.
