@@ -17,8 +17,9 @@ Import the package into your Go code:
 ```go
 import "github.com/tclaudel/typed-go"
 ```
+### Using typed.SyncMap
 
-Here's a basic example demonstrating how to use `typed.SyncMap`:
+Here's a basic example demonstrating how to use typed.SyncMap:
 
 ```go
 package main
@@ -29,13 +30,9 @@ import (
 )
 
 func main() {
-	// Create a new SyncMap
 	m := typed.NewSyncMap[string]()
-
-	// Store a key-value pair
 	m.Store("key", "value")
 
-	// Load the value for a key
 	val, ok := m.Load("key")
 	if ok {
 		fmt.Println("Value found:", val)
@@ -43,16 +40,42 @@ func main() {
 		fmt.Println("Value not found")
 	}
 
-	// Delete a key
 	m.Delete("key")
+}
+
+```
+
+### Using typed.List
+
+Here's how you can use the doubly linked list implementation:
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/tclaudel/typed-go"
+)
+
+func main() {
+	l := typed.NewList[int]()
+	
+	l.PushBack(1)
+	l.PushBack(2)
+	l.PushBack(3)
+	
+	for e := l.Front(); e != nil; e = e.Next() {
+		fmt.Println(e.Value())
+	}
 }
 ```
 
 ## Features
 
-- Type-safe wrapper around `sync.Map`
-- Methods for safe concurrent map operations such as `Store`, `Load`, `Delete`, `Range`, etc.
-- Support for comparing and swapping values atomically
+- Type-safe wrappers around sync.Map and doubly linked lists
+- Methods for safe concurrent map operations such as Store, Load, Delete, Range, etc.
+- Support for comparing and swapping values atomically in sync.Map
+- Operations for manipulation of doubly linked lists including insertion, removal, and iteration
 
 ## Contributing
 
